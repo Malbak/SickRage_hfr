@@ -120,7 +120,7 @@ class T411Provider(generic.TorrentProvider):
             self._doLogin( sickbeard.T411_USERNAME, sickbeard.T411_PASSWORD )
 
         results = []
-        searchUrl = self.url + '/torrents/search/?' + searchString.replace('!','')
+        searchUrl = self.url + '/torrents/search/?' + searchString.replace('!','') + '*'
         logger.log(u"Search string: " + searchUrl, logger.DEBUG)
         
         r = self.opener.open( searchUrl )
